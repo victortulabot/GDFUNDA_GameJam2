@@ -13,6 +13,8 @@ public class MoveObjectController : MonoBehaviour
 
 	private bool playerEntered;
 	private bool showInteractMsg;
+	[SerializeField] private AudioSource interactAudio;
+
 	private GUIStyle guiStyle;
 	private string msg;
 
@@ -96,6 +98,8 @@ public class MoveObjectController : MonoBehaviour
 						anim.enabled = true;
 						anim.SetBool(animBoolNameNum,!isOpen);
 						msg = getGuiMsg(!isOpen);
+
+						this.interactAudio.Play();
 					}
 
 				}
