@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
-    public GameObject item;
     public int id;
-
-    [SerializeField] private bool isItemCleaner;
-    [SerializeField] private AudioSource audioStory;
+    [SerializeField] AudioSource audioTake;
 
     void Start()
     {
@@ -19,13 +16,7 @@ public class EventController : MonoBehaviour
     {
         if (id == this.id)
         {
-            if(isItemCleaner)
-            {
-                //if item is an object to be cleaned put cleaning code here
-            } else
-            {
-                this.audioStory.Play();
-            }
+            audioTake.Play();
         }
     }
 }

@@ -9,11 +9,12 @@ public class StoryScript : MonoBehaviour
 	private GameObject player;
 
 	private bool playerEntered;
+	private bool audioPlayed = false;
 	[SerializeField] AudioSource audioStart;
+	[SerializeField] AudioSource audioStart2;
 	[SerializeField] AudioSource audioEnd;
 
 	private int rayLayerMask;
-
 
 	void Start()
 	{
@@ -70,8 +71,13 @@ public class StoryScript : MonoBehaviour
 				{
 					if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
 					{
-						audioStart.Play();
-						audioEnd.Stop();
+						if (!audioPlayed)
+						{
+							audioStart.Play();
+							audioStart2.Play();
+							audioEnd.Stop();
+							audioPlayed = true;
+						}
 					}
 				}
 			}
