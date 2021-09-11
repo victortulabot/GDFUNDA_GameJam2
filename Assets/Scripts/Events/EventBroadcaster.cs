@@ -27,6 +27,17 @@ public class EventBroadcaster : MonoBehaviour
                 audioScriptSource.Stop();
                 var clip = Resources.Load<AudioClip>("Sounds/script-2") as AudioClip;
                 audioScriptSource.PlayOneShot(clip);
+            } else if (globalCounter == 8)
+            {
+                audioScriptSource.Stop();
+                var clip = Resources.Load<AudioClip>("Sounds/script-3") as AudioClip;
+                audioScriptSource.PlayOneShot(clip);
+            }
+            else if (globalCounter == 10)
+            {
+                audioScriptSource.Stop();
+                var clip = Resources.Load<AudioClip>("Sounds/script-4") as AudioClip;
+                audioScriptSource.PlayOneShot(clip);
             }
         }
     }
