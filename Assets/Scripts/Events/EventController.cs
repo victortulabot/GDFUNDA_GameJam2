@@ -6,8 +6,11 @@ public class EventController : MonoBehaviour
 {
     public int id;
     private Animator anim;
+    private bool isCleaned = false;
+
     [SerializeField] AudioSource audioTake;
-    [SerializeField] GameObject toCleanItem;
+
+    GameObject ebTemp;
 
     void Start()
     {
@@ -20,8 +23,17 @@ public class EventController : MonoBehaviour
     {
         if (id == this.id)
         {
-            anim.enabled = true;
-            audioTake.Play();
+            if(!isCleaned)
+            {
+                isCleaned = true;
+                anim.enabled = true;
+                audioTake.Play();
+
+                GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().globalCounter += 1;
+                Debug.Log(GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().globalCounter);
+
+            }
+            
         }
     }
 }
