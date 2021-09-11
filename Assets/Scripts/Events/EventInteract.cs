@@ -8,8 +8,14 @@ public class EventInteract : MonoBehaviour
 	private Camera fpsCam;
 	private GameObject player;
 
+	private bool isFixed = false;
+
 	private bool playerEntered;
+	private bool showInteractMsg;
 	[SerializeField] private int id;
+
+	private GUIStyle guiStyle;
+	private string msg;
 
 	private int rayLayerMask;
 
@@ -28,6 +34,8 @@ public class EventInteract : MonoBehaviour
 		//the layer used to mask raycast for interactable objects only
 		LayerMask iRayLM = LayerMask.NameToLayer("InteractRaycast");
 		rayLayerMask = 1 << iRayLM.value;
+
+		setupGui();
 	}
 
 	void OnTriggerEnter(Collider other)
@@ -44,6 +52,7 @@ public class EventInteract : MonoBehaviour
 		if (other.gameObject == player)     //player has exited trigger
 		{
 			playerEntered = false;
+			showInteractMsg = false;
 		}
 	}
 
@@ -68,11 +77,20 @@ public class EventInteract : MonoBehaviour
 
 				if (moveableObject != null)     //hit object must have MoveableDraw script attached
 				{
+					showInteractMsg = true;
+
 					if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
 					{
+						isFixed = true;
+						showInteractMsg = false;
+						msg = "Fixed";
 						EventBroadcaster.current.Interact(id);
 					}
 				}
+			}
+			else
+			{
+				showInteractMsg = false;
 			}
 		}
 	}
@@ -112,4 +130,40 @@ public class EventInteract : MonoBehaviour
 		return rtnVal;
 
 	}
+
+	#region GUI Config
+
+	//configure the style of the GUI
+	private void setupGui()
+	{
+		guiStyle = new GUIStyle();
+		guiStyle.fontSize = 16;
+		guiStyle.fontStyle = FontStyle.Bold;
+		guiStyle.normal.textColor = Color.white;
+		msg = "Press E/Fire1 to Fix";
+	}
+
+	private string getGuiMsg(bool isFixed)
+	{
+		string rtnVal;
+		if (isFixed)
+		{
+			rtnVal = "Press E/Fire1 to Fix";
+		}else
+		{
+			rtnVal = "Fixed";
+		}
+
+		return rtnVal;
+	}
+
+	void OnGUI()
+	{
+		if (showInteractMsg)  //show on-screen prompts to user for guide.
+		{
+			GUI.Label(new Rect (50,Screen.height - 50,200,50), msg,guiStyle);
+		}
+	}		
+	//End of GUI Config --------------
+	#endregion
 }
