@@ -6,6 +6,7 @@ using UnityEngine;
 public class EventBroadcaster : MonoBehaviour
 {
     public static EventBroadcaster current;
+    public int globalCounter = 0;
 
     void Awake()
     {
