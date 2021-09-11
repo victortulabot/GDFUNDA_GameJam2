@@ -2708,13 +2708,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: plate (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1368694
+      value: 2.136869
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2722,7 +2726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.5524635
+      value: 2.552464
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5353,6 +5357,26 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
       propertyPath: m_Name
       value: china-plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 817905816aef5fb48a1e7cbf50582155, type: 3}
       propertyPath: m_RootOrder
@@ -8941,13 +8965,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: plate (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_RootOrder
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9692229
+      value: 1.969223
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13906,7 +13934,10 @@ GameObject:
   - component: {fileID: 707548263}
   - component: {fileID: 707548264}
   - component: {fileID: 707548265}
-  m_Layer: 0
+  - component: {fileID: 707548268}
+  - component: {fileID: 707548267}
+  - component: {fileID: 707548266}
+  m_Layer: 8
   m_Name: KitchenItems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13946,8 +13977,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7737203, y: 1.9562358, z: 1.8770866}
-  m_Center: {x: 1.7346795, y: -0.11026746, z: 1.7208881}
+  m_Size: {x: 1.7737203, y: 1.9562358, z: 2.4393883}
+  m_Center: {x: 1.7346795, y: -0.11026746, z: 1.4397373}
 --- !u!95 &707548265
 Animator:
   serializedVersion: 3
@@ -13967,6 +13998,48 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &707548266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707548262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 101f3b8bc596626409e7095962050064, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 2
+  audioTake: {fileID: 0}
+  toCleanItem: {fileID: 0}
+--- !u!114 &707548267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707548262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4d9da6cb63800049a14935a32053a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reachRange: 1.8
+  id: 2
+--- !u!114 &707548268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707548262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e617ac95c55644f938929ee87c74b211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectNumber: 1
 --- !u!1 &722141464
 GameObject:
   m_ObjectHideFlags: 0
@@ -35655,7 +35728,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1268638242}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: coloured-mugs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35673,7 +35746,7 @@ GameObject:
   - component: {fileID: 1268638248}
   - component: {fileID: 1269408264}
   - component: {fileID: 1270407368}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: coffee-cup2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35691,7 +35764,7 @@ GameObject:
   - component: {fileID: 1268638250}
   - component: {fileID: 1269408266}
   - component: {fileID: 1270407370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: coffee-cup1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35709,7 +35782,7 @@ GameObject:
   - component: {fileID: 1268638252}
   - component: {fileID: 1269408268}
   - component: {fileID: 1270407372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: coffee-cup4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35727,7 +35800,7 @@ GameObject:
   - component: {fileID: 1268638254}
   - component: {fileID: 1269408270}
   - component: {fileID: 1270407374}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: coffee-cup3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -35774,7 +35847,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1268416010}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.787}
+  m_LocalPosition: {x: 0, y: 0, z: 0.787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1268638242}
@@ -38491,6 +38564,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: dish-rack
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -38542,6 +38619,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
   m_PrefabInstance: {fileID: 1398983230}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1398983232 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: dbfd5a0d3687f5943866e159c822d788, type: 3}
+  m_PrefabInstance: {fileID: 1398983230}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1398983233
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398983232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.50467014, y: 0.21977748, z: 2.2743149}
+  m_Center: {x: 0, y: 0, z: -0.5415726}
 --- !u!1001 &1411578716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38878,6 +38973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: mug
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -38892,7 +38991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.3982506
+      value: 2.398251
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4e6db54670ea84d4298ec673c60ca3c7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -43404,6 +43503,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: toaster
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -43414,7 +43517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0049556494
+      value: 0.004955649
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2faafd7c39cf18b4d83d3d729c4f9a04, type: 3}
       propertyPath: m_LocalPosition.z
@@ -53828,13 +53931,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: plate
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.9692229
+      value: 1.969223
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6c24037ad5bed7e428ade751ad02702c, type: 3}
       propertyPath: m_LocalPosition.y
