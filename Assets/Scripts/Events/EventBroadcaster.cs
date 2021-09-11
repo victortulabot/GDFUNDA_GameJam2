@@ -7,6 +7,7 @@ public class EventBroadcaster : MonoBehaviour
 {
     public static EventBroadcaster current;
     public int globalCounter = 0;
+    [SerializeField] AudioSource audioScriptSource;
 
     void Awake()
     {
@@ -21,6 +22,12 @@ public class EventBroadcaster : MonoBehaviour
         if (onInteract != null)
         {
             onInteract(id);
+            if(globalCounter == 4)
+            {
+                audioScriptSource.Stop();
+                var clip = Resources.Load<AudioClip>("Sounds/script-2") as AudioClip;
+                audioScriptSource.PlayOneShot(clip);
+            }
         }
     }
 

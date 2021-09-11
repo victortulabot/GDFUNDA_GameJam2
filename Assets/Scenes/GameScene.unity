@@ -8179,6 +8179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalCounter: 0
+  audioScriptSource: {fileID: 1007507477}
 --- !u!1001 &495477173
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14012,7 +14013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  audioTake: {fileID: 0}
+  audioTake: {fileID: 1834392341}
 --- !u!114 &707548267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38533,7 +38534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  audioTake: {fileID: 0}
+  audioTake: {fileID: 1834392341}
 --- !u!65 &1363662750
 BoxCollider:
   m_ObjectHideFlags: 0
