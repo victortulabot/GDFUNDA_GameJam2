@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
+
 
 public class EventBroadcaster : MonoBehaviour
 {
     public static EventBroadcaster current;
     public int globalCounter = 0;
     [SerializeField] AudioSource audioScriptSource;
+    public PlayableDirector playableDirector;
 
     void Awake()
     {
@@ -36,8 +40,9 @@ public class EventBroadcaster : MonoBehaviour
             else if (globalCounter == 10)
             {
                 audioScriptSource.Stop();
-                var clip = Resources.Load<AudioClip>("Sounds/script-4") as AudioClip;
-                audioScriptSource.PlayOneShot(clip);
+                playableDirector.Play();
+                StartCoroutine(endGame());
+                
             }
         }
     }
@@ -48,5 +53,14 @@ public class EventBroadcaster : MonoBehaviour
         {
             onChangeUI();
         }
+    }
+
+    public IEnumerator endGame()
+    {
+        yield return new WaitForSeconds(2.5f);
+        var clip = Resources.Load<AudioClip>("Sounds/script-4") as AudioClip;
+        audioScriptSource.PlayOneShot(clip);
+        yield return new WaitForSeconds(45f);
+        SceneManager.LoadScene("MenuScene");
     }
 }
