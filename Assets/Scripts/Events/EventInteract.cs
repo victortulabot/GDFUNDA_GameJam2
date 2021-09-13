@@ -77,7 +77,9 @@ public class EventInteract : MonoBehaviour
 
 				if (moveableObject != null)     //hit object must have MoveableDraw script attached
 				{
-					setupGui();
+					if(msg != "Cleaned")
+						setupGui();
+
 					showInteractMsg = true;
 
 					if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
@@ -86,7 +88,7 @@ public class EventInteract : MonoBehaviour
                         {
 							isFixed = true;
 							showInteractMsg = false;
-							msg = "Fixed";
+							msg = "Cleaned";
 							EventBroadcaster.current.Interact(id);
 						}
 					}
@@ -146,8 +148,8 @@ public class EventInteract : MonoBehaviour
 		guiStyle.normal.textColor = Color.white;
 
 		if (GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().allowInteractions)
-			msg = "Press E/Fire1 to Fix";
-		else
+			msg = "Press E to Clean";
+		else if (GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().allowInteractions)
 			msg = "Listening...";
 	}
 
