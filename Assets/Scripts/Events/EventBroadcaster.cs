@@ -50,6 +50,7 @@ public class EventBroadcaster : MonoBehaviour
             }
             else if (globalCounter == 10)
             {
+                interactDisable();
                 audioScriptSource.Stop();
                 playableDirector.Play();
                 StartCoroutine(endGame());
