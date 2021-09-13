@@ -9,6 +9,7 @@ public class EventInteract : MonoBehaviour
 	private GameObject player;
 
 	private bool isFixed = false;
+	private bool allowInteractions;
 
 	private bool playerEntered;
 	private bool showInteractMsg;
@@ -18,7 +19,6 @@ public class EventInteract : MonoBehaviour
 	private string msg;
 
 	private int rayLayerMask;
-
 
 	void Start()
 	{
@@ -77,14 +77,18 @@ public class EventInteract : MonoBehaviour
 
 				if (moveableObject != null)     //hit object must have MoveableDraw script attached
 				{
+					setupGui();
 					showInteractMsg = true;
 
 					if (Input.GetKeyUp(KeyCode.E) || Input.GetButtonDown("Fire1"))
 					{
-						isFixed = true;
-						showInteractMsg = false;
-						msg = "Fixed";
-						EventBroadcaster.current.Interact(id);
+						if(GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().allowInteractions)
+                        {
+							isFixed = true;
+							showInteractMsg = false;
+							msg = "Fixed";
+							EventBroadcaster.current.Interact(id);
+						}
 					}
 				}
 			}
@@ -140,7 +144,11 @@ public class EventInteract : MonoBehaviour
 		guiStyle.fontSize = 16;
 		guiStyle.fontStyle = FontStyle.Bold;
 		guiStyle.normal.textColor = Color.white;
-		msg = "Press E/Fire1 to Fix";
+
+		if (GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().allowInteractions)
+			msg = "Press E/Fire1 to Fix";
+		else
+			msg = "Listening...";
 	}
 
 	private string getGuiMsg(bool isFixed)
@@ -149,7 +157,8 @@ public class EventInteract : MonoBehaviour
 		if (isFixed)
 		{
 			rtnVal = "Press E/Fire1 to Fix";
-		}else
+		}
+		else
 		{
 			rtnVal = "Fixed";
 		}

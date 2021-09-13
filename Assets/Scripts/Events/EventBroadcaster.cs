@@ -13,6 +13,8 @@ public class EventBroadcaster : MonoBehaviour
     [SerializeField] AudioSource audioScriptSource;
     public PlayableDirector playableDirector;
 
+    public bool allowInteractions = true;
+
     void Awake()
     {
         current = this;
@@ -29,13 +31,22 @@ public class EventBroadcaster : MonoBehaviour
             if(globalCounter == 4)
             {
                 audioScriptSource.Stop();
+
+                interactDisable();
+
                 var clip = Resources.Load<AudioClip>("Sounds/script-2") as AudioClip;
                 audioScriptSource.PlayOneShot(clip);
+                Invoke("interactEnable", clip.length);
+
             } else if (globalCounter == 8)
             {
                 audioScriptSource.Stop();
+                
+                interactDisable();
+
                 var clip = Resources.Load<AudioClip>("Sounds/script-3") as AudioClip;
                 audioScriptSource.PlayOneShot(clip);
+                Invoke("interactEnable", clip.length);
             }
             else if (globalCounter == 10)
             {
@@ -45,6 +56,18 @@ public class EventBroadcaster : MonoBehaviour
                 
             }
         }
+    }
+
+    public void interactDisable()
+    {
+        allowInteractions = false;
+        Debug.Log("DISABLED INTERACTIONS");
+    }
+
+    public void interactEnable()
+    {
+        allowInteractions = true;
+        Debug.Log("ENABLED INTERACTIONS");
     }
 
     public void UiChange()

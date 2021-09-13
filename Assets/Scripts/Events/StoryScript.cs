@@ -75,6 +75,9 @@ public class StoryScript : MonoBehaviour
 						{
 							audioStart.Play();
 							audioStart2.Play();
+
+							Invoke("startGameInteractions", audioStart2.clip.length);
+
 							audioEnd.Stop();
 							audioPlayed = true;
 						}
@@ -82,6 +85,11 @@ public class StoryScript : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	private void startGameInteractions()
+    {
+		GameObject.Find("EventBroadcaster").GetComponent<EventBroadcaster>().allowInteractions = true;
 	}
 
 	//is current gameObject equal to the gameObject of other.  check its parents
